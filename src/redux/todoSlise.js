@@ -8,12 +8,15 @@ export const todoSlice = createSlice({
   name: 'todo',
   initialState,
   reducers: {
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    addToDo: (state, action) => {
+      state.items = [...state.items, action.payload];
+    },
+    deleteToDo: (state, action) => {
+      state.items = state.items.filter(todo => todo.id !== action.payload);
     },
   },
 });
 
-export const { incrementByAmount } = todoSlice.actions;
+export const { addToDo, deleteToDo } = todoSlice.actions;
 
 export const todoReducer = todoSlice.reducer;

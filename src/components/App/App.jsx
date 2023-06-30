@@ -1,5 +1,3 @@
-// import { nanoid } from 'nanoid';
-
 import {
   Container,
   Grid,
@@ -68,12 +66,7 @@ export const App = () => {
             <Grid>
               {todos.map((todo, index) => (
                 <GridItem key={todo.id}>
-                  <Todo
-                    id={todo.id}
-                    text={todo.text}
-                    counter={index + 1}
-                    onClick={deleteTodo}
-                  />
+                  <Todo id={todo.id} text={todo.text} counter={index + 1} />
                 </GridItem>
               ))}
             </Grid>
