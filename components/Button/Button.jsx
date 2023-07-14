@@ -15,6 +15,7 @@ export const Button = ({ children, counter, role = "thumbsUp", id }) => {
   const onBtnHandleClick = async () => {
     try {
       await updateCommentCount({ id, [role]: counter + 1 });
+      console.log(122);
     } catch (error) {
       console.log(error.message);
     }
