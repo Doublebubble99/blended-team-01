@@ -1,10 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Comment } from '../Comment/Comment';
-import { Grid } from '../Grid/Grid';
-import { comments } from '../../helpers/comments';
+import React from "react";
+import PropTypes from "prop-types";
+import { Comment } from "../Comment/Comment";
+import { Grid } from "../Grid/Grid";
+// import { comments } from "../../helpers/comments";
+import { useGetCommentsQuery } from "../../redux/commentApi";
 
 export const Comments = () => {
+  const { data: comments } = useGetCommentsQuery();
   return (
     <Grid>
       {comments &&
